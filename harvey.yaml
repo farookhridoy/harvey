@@ -1,78 +1,70 @@
 persona:
-  name: "Harvey"
-  company: "Your Company"
-  role: "Business Development"
-  email: "harvey@yourcompany.com"
-  linkedin: "linkedin.com/in/harvey-yourcompany"
-  tone: "professional, consultative, confident"
+  name: "Md Omar Farook Hridoy"
+  company: "Dentora"
+  role: "Founder"
+  email: "info@thelarasoft.com"
+  linkedin: "farookhridoy.com"
+  tone: "warm, respectful, concise, plain English; address dentists as Dr."
 
 product:
-  name: "Your Product"
-  description: "Describe what your product does and who it's for"
-  pricing: "Starting at $X/mo"
+  name: "Dentora"
+  description: "Cloud dental clinic software for dentists and chambers in Bangladesh: appointments, patient records, dental charts, payments and invoices, multi-chamber support, bKash billing and an AI assistant. Runs in any browser on phone or computer, nothing to install. Website: https://dentora.thelarasoft.com"
+  pricing: "Basic 999 BDT/month, Standard 2,499 BDT/month, Premium 4,999 BDT/month"
   key_benefits:
-    - "Benefit 1"
-    - "Benefit 2"
-    - "Benefit 3"
+    - "Replaces the paper appointment book and patient files, so nothing gets lost"
+    - "Appointments, dental charts, payments and PDF invoices in one screen"
+    - "Manage more than one chamber and see money for each"
+    - "Works on a phone, pay by bKash, free demo and setup together with you"
   objection_responses:
-    "too expensive": "I understand budget is important. Most of our clients see ROI within 30 days..."
-    "already have a solution": "That makes sense. Curious — what's the one thing you wish it did better?"
-    "not interested": "No worries at all. Mind if I ask what your current approach looks like?"
+    "too expensive": "Understood. Basic is 999 BDT/month, and one recovered missed appointment usually covers it. The trial is free."
+    "already have a solution": "That makes sense. What is the one thing you wish it did better?"
+    "not interested": "No problem at all. The demo link stays open if you ever want to look."
+    "too busy to learn": "We set it up with you and can import your existing patient list, so you start with your data already in."
   offer:
-    primary: ""                    # Main offer (e.g., "Monthly subscription starting at $99/mo")
-    entry: ""                      # Low-commitment entry (e.g., "14-day free trial", "Free audit")
-    goal: "book_call"              # Goal of outreach: book_call, start_trial, get_reply
-    booking_method: "calendar_link" # calendar_link, suggest_times, ask_preference
-    booking_url: ""                # Calendar link URL (if using calendar_link method)
-    meeting_duration: "15 minutes" # How long the call is
-    meeting_owner: ""              # Who takes the meeting (name or role)
+    primary: "Monthly subscription from 999 BDT/month"
+    entry: "Free demo plus free trial for your clinic, set up together with you"
+    goal: "start_trial"
+    booking_method: "ask_preference"
+    booking_url: "https://dentora.thelarasoft.com/"
+    meeting_duration: "10 minutes"
+    meeting_owner: "Founder"
 
 icp:
   industries:
-    - "SaaS"
-    - "Marketing Agency"
-  company_size: "10-200 employees"
+    - "dentist"
+  company_size: "1-15 employees"
   titles:
-    - "VP Marketing"
-    - "Head of Growth"
-    - "CMO"
-    - "Director of Marketing"
+    - "Dentist"
+    - "Dental Surgeon"
+    - "Clinic Owner"
+    - "Principal Dentist"
   geography:
-    - "United States"
-  # Roles that signal a company is in-market RIGHT NOW (a company hiring a
-  # "Head of Growth" is shopping for growth tooling). Used for careers-page
-  # scanning and job-board discovery. Empty = fall back to titles above.
+    - "Dhaka, Bangladesh"
   hiring_signals: []
 
 channels:
   email:
     enabled: true
-    provider: "gmail"          # gmail (recommended) | microsoft | smtp | instantly
-    max_daily_sends: 50
-    require_approval: true      # native providers: emails wait in the Outbox
-    send_to_risky: false        # also send to catch-all domains (off = safest)
-    max_bounce_rate: 0.05       # pause all sending if bounces exceed this
+    provider: "smtp"
+    max_daily_sends: 15
+    require_approval: true
+    send_to_risky: false
+    max_bounce_rate: 0.03
   linkedin:
-    enabled: true
-    max_daily_connections: 20
-    max_daily_messages: 10
+    enabled: false
+    max_daily_connections: 0
+    max_daily_messages: 0
 
 usage:
-  max_daily_claude_percent: 80
-  heartbeat_interval_minutes: 15
+  max_daily_claude_percent: 60
+  heartbeat_interval_minutes: 30
   quiet_hours:
-    start: "22:00"
-    end: "07:00"
-    timezone: "America/New_York"
+    start: "21:00"
+    end: "09:00"
+    timezone: "Asia/Dhaka"
 
-# Optional: check each new recipient with Precleared (precleared.dev) before
-# the first cold email: may cold marketing email go to this address under UK
-# PECR, US CAN-SPAM, Canada's CASL, Germany's UWG and France's rules? Any other
-# answer holds the email back, with the reason in the Outbox. One check per
-# address; 10 a day free without a key, 25 with a free key (PRECLEARED_API_KEY
-# in .env). Applies to the native providers (gmail, smtp).
 compliance:
   precleared:
     enabled: false
-    sender_country: ""          # GB or US: where your business is based
-    address_source: "unknown"   # published | bought | scraped | given | unknown
+    sender_country: ""
+    address_source: "published"
